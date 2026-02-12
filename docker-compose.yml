@@ -2,29 +2,15 @@ version: '3'
 
 services:
   payload:
-    image: node:18-alpine
-    ports:
-      - '3000:3000'
-    volumes:
-      - .:/home/node/app
-      - node_modules:/home/node/app/node_modules
-    working_dir: /home/node/app/
-    command: sh -c "yarn install && yarn dev"
-    depends_on:
-      - mongo
-    env_file:
-      - .env
-
-  mongo:
-    image: mongo:latest
-    ports:
-      - '27017:27017'
-    command:
-      - --storageEngine=wiredTiger
-    volumes:
-      - data:/data/db
-    logging:
-      driver: none
+    image: nanet-portfolio
+    container_name: nanet-portfolio
+    restart: unless-stopped
+    labels:
+      - 'traefik.enable=true'
+      - 'traefik.http.routers.whoami.rule=Host(test.ext.leesavage.co.uk)'
+      - 'traefik.http.routers.whoami.entrypoints=websecure'
+      - 'traefik.http.routers.whoami.tls=true'
+      - 'traefik.http.routers.whoami.tls.certresolver=le'
 
 volumes:
   data:
