@@ -7,10 +7,10 @@ services:
     restart: unless-stopped
     labels:
       - 'traefik.enable=true'
-      - 'traefik.http.routers.whoami.rule=Host(test.ext.leesavage.co.uk)'
-      - 'traefik.http.routers.whoami.entrypoints=websecure'
-      - 'traefik.http.routers.whoami.tls=true'
-      - 'traefik.http.routers.whoami.tls.certresolver=le'
+      - 'traefik.http.routers.payload.rule=Host(`test.exp.leesavage.co.uk`)'
+      - 'traefik.http.routers.payload.entrypoints=websecure'
+      - 'traefik.http.routers.payload.tls=true'
+      - 'traefik.http.routers.payload.tls.certresolver=le'
 
 volumes:
   data:
