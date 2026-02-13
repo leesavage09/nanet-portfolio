@@ -10,6 +10,8 @@ services:
     image: leesavage09/nanet-portfolio
     container_name: nanet-portfolio
     restart: unless-stopped
+    ports:
+      - '3000:3000'
     networks:
       - traefik-network
     labels:

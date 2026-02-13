@@ -71,5 +71,5 @@ jobs:
             EOF
             # --- run Docker Compose with .env file ---          
             docker-compose pull
-            docker-compose up -d --remove-orphans
+            docker-compose run --rm media-init && docker-compose up -d payload --remove-orphans
             docker system prune -f
