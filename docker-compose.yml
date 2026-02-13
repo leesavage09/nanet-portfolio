@@ -5,13 +5,19 @@ services:
     image: nanet-portfolio
     container_name: nanet-portfolio
     restart: unless-stopped
+    networks:
+      - traefik-network
     labels:
       - 'traefik.enable=true'
       - 'traefik.http.routers.payload.rule=Host(`test.exp.leesavage.co.uk`)'
       - 'traefik.http.routers.payload.entrypoints=websecure'
       - 'traefik.http.routers.payload.tls=true'
       - 'traefik.http.routers.payload.tls.certresolver=le'
-
+      - 'traefik.http.services.payload.loadbalancer.server.port=3000'
 volumes:
   data:
   node_modules:
+
+networks:
+  traefik-network:
+    external: true
