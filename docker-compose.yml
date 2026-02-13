@@ -2,7 +2,7 @@ version: '3'
 
 services:
   payload:
-    image: nanet-portfolio
+    image: leesavage09/nanet-portfolio
     container_name: nanet-portfolio
     restart: unless-stopped
     networks:
