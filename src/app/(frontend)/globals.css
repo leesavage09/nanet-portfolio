@@ -123,6 +123,8 @@
   --success: oklch(78% 0.08 200deg);
   --warning: oklch(89% 0.1 75deg);
   --error: oklch(75% 0.15 25deg);
+  --smalt-blue-500: '#407E8C';
+  --smalt-blue-900: '#2D424C';
 }
 
 [data-theme='dark'] {
@@ -203,6 +205,9 @@
   --color-success: var(--success);
   --color-warning: var(--warning);
   --color-error: var(--error);
+
+  --color-smalt-blue-500: var(--smalt-blue-500);
+  --color-smalt-blue-900: var(--smalt-blue-900);
 }
 
 @layer base {
