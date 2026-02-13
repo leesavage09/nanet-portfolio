@@ -20,9 +20,11 @@ services:
       - CRON_SECRET=${CRON_SECRET}
       - NEXT_PUBLIC_SERVER_URL=${NEXT_PUBLIC_SERVER_URL}
       - PREVIEW_SECRET=${PREVIEW_SECRET}
+    volumes:
+      - media:/app/public/media
+
 volumes:
-  data:
-  node_modules:
+  media:
 
 networks:
   traefik-network:
