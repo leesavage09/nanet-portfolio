@@ -6,7 +6,7 @@ import type { Page } from '@/payload-types'
 
 import { CMSLink } from '@/components/Link'
 import { Media } from '@/components/Media'
-import RichText from '@/components/RichText'
+// import RichText from '@/components/RichText'
 
 export const CopywriterHero: React.FC<Page['hero']> = ({ links, media, richText }) => {
   const { setHeaderTheme } = useHeaderTheme()
@@ -26,7 +26,7 @@ export const CopywriterHero: React.FC<Page['hero']> = ({ links, media, richText 
             Hi there,
           </span>
           <span className="mb-6 text-smalt-blue-500 text-6xl sm:text-7xl inline-block">
-            I'm Nanet
+            I&apos;m Nanet
           </span>
           <span className="mb-6 text-smalt-blue-500 text-3xl sm:text-5xl inline-block w-full">
             Not just another copywriter
