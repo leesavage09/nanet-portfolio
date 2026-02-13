@@ -61,6 +61,15 @@ jobs:
           key: ${{ secrets.SERVER_SSH_KEY }}
           script: |
             cd /home/dev/nanet-portfolio
+            # --- create temporary .env file with secrets ---
+            cat > .env <<EOF
+            DATABASE_URL=${{ secrets.DATABASE_URL }}
+            PAYLOAD_SECRET=${{ secrets.PAYLOAD_SECRET }}
+            CRON_SECRET=${{ secrets.CRON_SECRET }}
+            NEXT_PUBLIC_SERVER_URL=${{ secrets.NEXT_PUBLIC_SERVER_URL }}
+            PREVIEW_SECRET=${{ secrets.PREVIEW_SECRET }}
+            EOF
+            # --- run Docker Compose with .env file ---          
             docker-compose pull
             docker-compose up -d --remove-orphans
             docker system prune -f

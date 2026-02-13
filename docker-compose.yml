@@ -14,6 +14,12 @@ services:
       - 'traefik.http.routers.payload.tls=true'
       - 'traefik.http.routers.payload.tls.certresolver=le'
       - 'traefik.http.services.payload.loadbalancer.server.port=3000'
+    environment:
+      - DATABASE_URL=${DATABASE_URL}
+      - PAYLOAD_SECRET=${PAYLOAD_SECRET}
+      - CRON_SECRET=${CRON_SECRET}
+      - NEXT_PUBLIC_SERVER_URL=${NEXT_PUBLIC_SERVER_URL}
+      - PREVIEW_SECRET=${PREVIEW_SECRET}
 volumes:
   data:
   node_modules:
